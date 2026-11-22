@@ -1,32 +1,71 @@
 ---
 import Base from '../layouts/Base.astro';
 ---
-<Base title="Start in Frankrijk">
-  <h1>Verhuizen naar Frankrijk, stap voor stap</h1>
-  <p class="lead">
-    Een wegwijzer voor Nederlanders die naar Frankrijk verhuizen. Per onderwerp lees je kort wat je moet regelen en in welke volgorde, en ga je met één klik naar de officiële bron. Extra aandacht voor wie een gîte of een ander bedrijf begint.
-  </p>
-  <p>
-    <a class="button" href="/stappenplan/">Bekijk het stappenplan</a>
-  </p>
+<Base title="Start in Frankrijk" home>
+  <section class="hero">
+    <img
+      src="/fotos/hero-boerderij.jpg"
+      alt="Oude boerderij met een stenen schuur en een regenboog boven het weiland"
+      width="870" height="580"
+      fetchpriority="high"
+    />
+    <div class="hero-shade"></div>
+    <div class="hero-text">
+      <p class="eyebrow">Een wegwijzer voor Nederlanders</p>
+      <h1>Verhuizen naar Frankrijk, stap voor stap</h1>
+      <p class="hero-lead">Wat je moet regelen, in welke volgorde en waar je de officiële bron vindt. Met extra aandacht voor wie een gîte of ander bedrijf begint.</p>
+      <a class="button light" href="/stappenplan/">Bekijk het stappenplan</a>
+    </div>
+  </section>
 
-  <h2>Begin je een gîte?</h2>
-  <p>Van het kopen van een huis met gîte tot de aanmelding bij de mairie, de belasting en de verhuur.</p>
-  <ul class="cards">
-    <li><a href="/gite/huis-met-gite-kopen/">Huis met gîte kopen</a><p>Waar let je op voordat je tekent.</p></li>
-    <li><a href="/gite/gite-beginnen/">Gîte beginnen</a><p>Bedrijfsvorm en belasting in grote lijnen.</p></li>
-    <li><a href="/gite/aanmelden-mairie/">Aanmelden bij de mairie</a><p>Wat je moet melden en waar.</p></li>
-    <li><a href="/gite/verzekering/">Verzekering voor je gîte</a><p>Wat verplicht is en wat verstandig is.</p></li>
-  </ul>
+  <section class="routes">
+    <div class="routes-head">
+      <h2>Drie routes, één plek</h2>
+      <p>Elke pagina noemt de datum van de laatste controle en linkt naar de officiële bron.</p>
+    </div>
+    <ul class="route-cards">
+      <li>
+        <a href="/stappenplan/">
+          <img src="/fotos/kaart-stappenplan.jpg" alt="Luchtfoto van een Frans dorp omringd door velden en bomen" width="774" height="581" loading="lazy" />
+          <div class="route-body">
+            <h3>Stappenplan</h3>
+            <p>Alles op volgorde, van uitschrijven tot inschrijven.</p>
+            <span class="more">Lees verder &rarr;</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/gite/">
+          <img src="/fotos/kaart-gite.jpg" alt="Oud stenen huis met houten balkon en rode dakpannen" width="387" height="581" loading="lazy" class="pos-top" />
+          <div class="route-body">
+            <h3>Gîte beginnen</h3>
+            <p>Huis kopen, bedrijfsvorm, mairie en verzekering.</p>
+            <span class="more">Lees verder &rarr;</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a href="/verhuizen/">
+          <img src="/fotos/kaart-verhuizen.jpg" alt="Een stel draagt een verhuisdoos en een plant een nieuw huis binnen" width="1032" height="581" loading="lazy" />
+          <div class="route-body">
+            <h3>Verhuizen</h3>
+            <p>Zorgverzekering, inschrijven en Nederlandstalige hulp.</p>
+            <span class="more">Lees verder &rarr;</span>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </section>
 
-  <h2>Verhuizen in het algemeen</h2>
-  <ul class="cards">
-    <li><a href="/verhuizen/uitschrijven-en-inschrijven/">Uitschrijven en inschrijven</a><p>Uit de Nederlandse registratie, erin in Frankrijk.</p></li>
-    <li><a href="/verhuizen/zorgverzekering/">Zorgverzekering</a><p>Hoe dat in Frankrijk werkt.</p></li>
-    <li><a href="/verhuizen/nederlandstalige-hulp/">Nederlandstalige hulp</a><p>Bedrijven met service in het Nederlands of Engels.</p></li>
-  </ul>
+  <section class="gite-band">
+    <div>
+      <h2>Een gîte, pension of ambacht starten?</h2>
+      <p>Straks heb je een website nodig. EasySite.fr bouwt hem.</p>
+    </div>
+    <a class="button sand" href="https://easysite.fr">Naar EasySite.fr</a>
+  </section>
 
-  <div class="notice">
-    Deze site legt uit en wijst de weg. Het is geen juridisch of fiscaal advies. Regels kunnen veranderen, dus controleer altijd de officiële bron. Op elke pagina staat wanneer ik die voor het laatst heb nagekeken.
+  <div class="home-notice">
+    <p>Deze site legt uit en wijst de weg. Het is geen juridisch of fiscaal advies. Regels kunnen veranderen, dus controleer altijd de officiële bron. Op elke pagina staat wanneer ik die voor het laatst heb nagekeken.</p>
   </div>
 </Base>
