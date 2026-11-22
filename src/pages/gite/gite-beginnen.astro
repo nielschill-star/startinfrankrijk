@@ -3,25 +3,45 @@ import Article from '../../layouts/Article.astro';
 ---
 <Article
   title="Gîte beginnen: bedrijfsvorm en belasting"
-  description="De fiscale en juridische basis van een gîte in Frankrijk: loueur en meublé, de micro-regeling en waar je de actuele regels vindt."
+  description="De fiscale basis van een gîte in Frankrijk: loueur en meublé, de micro-BIC-drempels voor 2025 en 2026 en wanneer je naar het reëel stelsel moet."
   lastChecked="22 november 2026"
   cta="gite"
-  draft
   sources={[
     { label: 'Service-public.fr: inkomsten uit gemeubileerde verhuur', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F32744' },
     { label: 'Service Public Entreprendre: toeristische verhuur en micro-entreprise', url: 'https://entreprendre.service-public.gouv.fr/vosdroits/F39451' },
-    { label: 'Impots.gouv.fr: de gemeubileerde verhuur', url: 'https://www.impots.gouv.fr/particulier/les-locations-meublees' },
+    { label: 'Economie.gouv.fr: meublé de tourisme, regels voor je woning', url: 'https://www.economie.gouv.fr/particuliers/location-meublee-de-tourisme-quelles-sont-les-regles-respecter-pour-sa-residence' },
+    { label: 'Service-public.fr: sociale bijdragen bij gemeubileerde verhuur', url: 'https://www.service-public.gouv.fr/particuliers/vosdroits/F34102' },
+    { label: 'Impots.gouv.fr: FAQ gemeubileerde verhuur (maart 2026)', url: 'https://www.impots.gouv.fr/sites/default/files/media/1_metier/5_international/actualite/faq-lmnp-03_2026.pdf' },
   ]}
 >
-  <p class="lead">Wie een gîte verhuurt, is in Frankrijk een loueur en meublé. Welke vorm en welk belastingstelsel daarbij past, hangt af van wat je verdient en of de gîte je hoofdactiviteit is.</p>
+  <p class="lead">Wie een gîte verhuurt, is in Frankrijk een loueur en meublé. De inkomsten tellen als BIC (bénéfices industriels et commerciaux, ongeveer: winst uit bedrijf). Welk stelsel je kiest, hangt af van je omzet en van of je gîte officieel geclassificeerd is.</p>
 
   <div class="notice warn">
-    De regels voor de micro-regeling bij gemeubileerde verhuur zijn per 1 januari 2026 veranderd. Bedragen zet ik pas op deze pagina nadat ik ze op de officiële pagina heb nagekeken. Laat je voor jouw situatie adviseren door een Franse comptable.
+    De drempels zijn de afgelopen jaren meerdere keren veranderd, en bronnen spreken elkaar soms tegen. Bedragen hieronder komen van Service Public en Economie.gouv.fr. Laat ze voor jouw situatie controleren door een Franse comptable (boekhouder).
   </div>
 
-  <h2>Twee soorten verhuurder</h2>
-  <p>Frankrijk onderscheidt de niet-professionele verhuurder (LMNP) en de professionele verhuurder (LMP). Het verschil zit in de inkomsten en in het aandeel dat de verhuur in je totale inkomen heeft. De exacte voorwaarden staan bij impots.gouv.fr.</p>
+  <h2>Classé of non classé</h2>
+  <p>Een gîte kan officieel geclassificeerd zijn (meublé de tourisme classé, met sterren) of niet. Dat verschil bepaalt in de belasting welke drempel en welk percentage voor jou gelden.</p>
 
-  <h2>Micro-regeling of reëel stelsel</h2>
-  <p class="todo">Volgt. Dit hangt van de actuele drempels af.</p>
+  <h2>Micro-BIC: de vereenvoudigde regeling</h2>
+  <p>Blijf je onder de omzetdrempel, dan val je onder micro-BIC (micro-entreprise). Je betaalt dan belasting over je omzet min een vast percentage voor kosten (abattement), zonder je werkelijke kosten bij te houden.</p>
+  <ul>
+    <li><strong>Inkomsten van 2025</strong> (aangifte in 2026): niet-geclassificeerde meublé 15.000 €, geclassificeerde meublé 77.700 €.</li>
+    <li><strong>Inkomsten van 2026</strong> (aangifte in 2027): niet-geclassificeerd blijft 15.000 €, geclassificeerd gaat naar 83.600 €.</li>
+    <li><strong>Abattement:</strong> 50% voor een gewone verhuur of een geclassificeerde meublé, 30% voor een niet-geclassificeerde.</li>
+  </ul>
+  <p>Zit je boven de drempel, dan moet je volgens Service Public aangifte doen in het régime réel: je trekt dan je echte kosten en afschrijvingen af.</p>
+
+  <h2>LMNP of LMP</h2>
+  <p>Frankrijk onderscheidt de niet-professionele verhuurder (LMNP) en de professionele verhuurder (LMP). Een van de criteria is de omzet: Service Public noemt 23.000 € als grens waarboven gemeubileerde verhuur professioneel wordt en je sociale bijdragen betaalt. Wat dat betekent als de gîte je hoofdactiviteit wordt, bespreek je met een comptable.</p>
+
+  <h2>Eerste stappen</h2>
+  <ul>
+    <li>Meld je activiteit binnen vijftien dagen na de start aan via het guichet des formalités des entreprises (formalites.entreprises.gouv.fr). Dat staat op Economie.gouv.fr.</li>
+    <li>Gemeubileerde verhuur valt onder de CFE (cotisation foncière des entreprises, een lokale bedrijfsbelasting). Er zijn uitzonderingen, die staan bij impots.gouv.fr.</li>
+    <li>Meld je gîte aan bij de mairie. Dat is een apart traject: <a href="/gite/aanmelden-mairie/">aanmelden bij de mairie</a>.</li>
+  </ul>
+
+  <h2>Wat ik hier niet beantwoord</h2>
+  <p>Welke bedrijfsvorm (bijvoorbeeld in je eigen naam of via een vennootschap) het best past bij een gîte, een paardenpension en een webdesignbedrijf tegelijk, hangt van je hele situatie af. Dat is werk voor een comptable, niet voor een algemene pagina.</p>
 </Article>
