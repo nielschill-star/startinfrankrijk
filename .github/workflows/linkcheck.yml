@@ -1,0 +1,46 @@
+name: Maandelijkse linkcontrole
+
+on:
+  schedule:
+    - cron: '17 6 1 * *'   # elke 1e van de maand
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  linkcheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+      - run: npm run build
+
+      - name: Links controleren
+        id: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --max-retries 2
+            --timeout 20
+            --accept 200,201,202,204,206,301,302,303,307,308,403,429
+            --root-dir ${{ github.workspace }}/dist
+            './dist/**/*.html'
+          output: ./lychee-report.md
+          fail: false
+
+      - name: Melding maken bij stuk gaande links
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@v5
+        with:
+          title: Linkcontrole ${{ github.run_id }}: stuk gaande links gevonden
+          content-filepath: ./lychee-report.md
+          labels: linkcontrole

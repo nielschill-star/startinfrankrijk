@@ -1,0 +1,49 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+  noindex?: boolean;
+}
+
+const { title, description = 'Wegwijzer voor Nederlanders die naar Frankrijk verhuizen, met extra aandacht voor wie een gîte begint.', noindex = false } = Astro.props;
+const fullTitle = title === 'Start in Frankrijk' ? title : `${title} | Start in Frankrijk`;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+  </head>
+  <body>
+    <header class="site">
+      <div class="wrap">
+        <a class="brand" href="/">Start in Frankrijk</a>
+        <nav aria-label="Hoofdmenu">
+          <a href="/stappenplan/">Stappenplan</a>
+          <a href="/gite/">Gîte beginnen</a>
+          <a href="/verhuizen/">Verhuizen</a>
+          <a href="/over/">Over</a>
+          <a href="/contact/">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <slot />
+      </div>
+    </main>
+    <footer class="site">
+      <div class="wrap">
+        <span>© Start in Frankrijk · gemaakt door <a href="https://easysite.fr">EasySite.fr</a></span>
+        <span><a href="/mentions-legales/">Mentions légales</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

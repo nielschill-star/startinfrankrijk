@@ -1,0 +1,41 @@
+---
+import Base from './Base.astro';
+
+interface Source { label: string; url: string }
+
+interface Props {
+  title: string;
+  description: string;
+  lastChecked: string;
+  sources: Source[];
+  cta?: 'gite' | 'none';
+  draft?: boolean;
+}
+
+const { title, description, lastChecked, sources, cta = 'none', draft = false } = Astro.props;
+---
+<Base title={title} description={description} noindex={draft}>
+  <article>
+    <h1>{title}</h1>
+    <p class="meta">Laatst gecontroleerd op: {lastChecked}</p>
+    {draft && (
+      <div class="notice warn">
+        Deze pagina is nog in uitwerking. Gebruik de officiële bronnen onderaan.
+      </div>
+    )}
+    <slot />
+    <section class="sources">
+      <h2>Officiële bronnen</h2>
+      <ul>
+        {sources.map((s) => <li><a href={s.url} rel="noopener">{s.label}</a></li>)}
+      </ul>
+      <p class="meta">Regels en bedragen kunnen veranderen. Controleer altijd de officiële bron voor jouw situatie.</p>
+    </section>
+    {cta === 'gite' && (
+      <aside class="cta">
+        <p><strong>Een eigen website voor je gîte?</strong> Deze site is gemaakt door EasySite.fr, een webdesignbedrijf voor ondernemers in Frankrijk.</p>
+        <a class="button" href="https://easysite.fr">Bekijk EasySite.fr</a>
+      </aside>
+    )}
+  </article>
+</Base>
